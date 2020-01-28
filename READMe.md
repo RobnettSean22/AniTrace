@@ -1,3 +1,17 @@
+Dependences
+###Front-End
+---axios
+---react redux
+---react-router-dom
+
+###Server Side
+---bcyrpt
+---express
+---massive
+---dotenv
+
+///////////////////////////////////
+
 Front-End
 
 ###Components
@@ -15,3 +29,5 @@ Front-End
 ---Single Anime
 
 ---Single All
+
+SQL Data Base
