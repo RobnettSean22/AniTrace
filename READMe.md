@@ -66,8 +66,13 @@ VALUE
 
 /////////////read
 
-SELECT * planning
+SELECT * FROM planning
 WHERE user_id = $1;
+
+
+
+********************************
+********************************
 
 ////////////update
 
@@ -79,6 +84,21 @@ WHERE user_id = $1;
 
 SELECT * FROM planning
 ORDER BY planning_id
+
+********************************
+********************************
+
+/////////////delete
+
+DELETE FROM planning
+WHERE user_id = $1 AND planning_id;
+
+SELECT * FROM planning
+ORDER BY planning_id
+
+********************************
+********************************
+
 ```
 
 ++++++++++watching+++++++
@@ -97,8 +117,11 @@ VALUE
 
 /////////////read
 
-SELECT * watching
+SELECT * FROM watching
 WHERE user_id = $1;
+
+********************************
+********************************
 
 ////////////update
 
@@ -110,6 +133,22 @@ WHERE user_id = $1;
 
 SELECT * FROM watching
 ORDER BY watching_id
+
+
+********************************
+********************************
+
+/////////////delete
+
+DELETE FROM watching
+WHERE user_id = $1 AND watching_id;
+
+SELECT * FROM watching
+ORDER BY watching_id
+
+********************************
+********************************
+
 ```
 
 +++++++++completed++++++++
@@ -128,8 +167,12 @@ VALUE
 
 /////////////read
 
-SELECT * completed
+SELECT * FROM completed
 WHERE user_id = $1;
+
+
+********************************
+********************************
 
 ////////////update
 
@@ -141,4 +184,20 @@ WHERE user_id = $1;
 
 SELECT * FROM complete
 ORDER BY completed_id
+
+
+********************************
+********************************
+
+/////////////delete
+
+DELETE FROM completed
+WHERE user_id = $1 AND completed_id;
+
+SELECT * FROM completed
+ORDER BY completed_id
+
+********************************
+********************************
+
 ```
