@@ -43,7 +43,7 @@ CREATE TABLE users(
 )
 INSERT INTO users(family_name, username, email, password)
 VALUES
-('Robnett', 'universoul', 'robnettsean22@gmail.com', 'Blindreaper22')
+('Robnett', 'universoul', 'robnettsean22@gmail.com', 'Blindreaper22');
 
 
 
@@ -61,7 +61,7 @@ CREATE TABLE planning(
 )
 
 INSERT INTO planning(planning_code, user_id)
-VALUE
+VALUES
 ()
 
 /////////////read
@@ -91,7 +91,7 @@ ORDER BY planning_id
 /////////////delete
 
 DELETE FROM planning
-WHERE user_id = $1 AND planning_id;
+WHERE user_id = $1 AND planning_id = $2;
 
 SELECT * FROM planning
 ORDER BY planning_id
@@ -112,7 +112,7 @@ CREATE TABLE watching(
 )
 
 INSERT INTO watching(watching_code, user_id)
-VALUE
+VALUES
 ()
 
 /////////////read
@@ -162,7 +162,7 @@ CREATE TABLE completed(
 )
 
 INSERT INTO watching(watching_code, user_id)
-VALUE
+VALUES
 ()
 
 /////////////read
