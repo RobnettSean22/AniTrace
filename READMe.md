@@ -35,9 +35,8 @@ SQL Data Base
 
 ```sql
 CREATE TABLE users(
-    user_id SERIAL PRIMARY KEY NOT NULL,
+    username TEXT UNIQUE PRIMARY KEY NOT NULL,
     family_name TEXT NOT NULL,
-    username TEXT NOT NULL,
     email TEXT NOT NULL,
     password TEXT NOT NULL
 );
@@ -57,7 +56,7 @@ CREATE TABLE planning(
     planning_id SERIAL PRIMARY KEY NOT NULL,
     planning_code INTEGER,
     episode_watched BOOLEAN NOT NULL DEFAULT FALSE,
-    user_id INTEGER REFERENCES user(user_id)
+    username TEXT REFERENCES users(username)
 )
 
 INSERT INTO planning(planning_code, user_id)
@@ -108,7 +107,7 @@ CREATE TABLE watching(
     watching_id SERIAL PRIMARY KEY NOT NULL,
     watching_code INTEGER,
      episode_watched BOOLEAN NOT NULL DEFAULT FALSE,
-    user_id INTEGER REFERENCES users(user_id)
+     username TEXT REFERENCES users(username)
 );
 
 INSERT INTO watching(watching_code, user_id)
@@ -158,7 +157,7 @@ CREATE TABLE completed(
     completed_id SERIAL PRIMARY KEY NOT NULL,
     completed_code INTEGER,
      episode_watched BOOLEAN NOT NULL DEFAULT FALSE,
-    user_id INTEGER REFERENCES users(user_id)
+     username TEXT REFERENCES users(username)
 );
 
 INSERT INTO watching(watching_code, user_id)

@@ -1,4 +1,4 @@
-s
+
 SELECT *
 FROM watching
-WHERE user_id = $1;
+WHERE username = $1;

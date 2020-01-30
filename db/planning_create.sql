@@ -1,4 +1,4 @@
 INSERT INTO planning
-    (planning_code, user_id)
+    (planning_code, username)
 VALUES
     ($1 , $2);

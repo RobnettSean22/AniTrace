@@ -2,7 +2,7 @@ UPDATE planning
 
 SET episode_watched = $2
 
-WHERE user_id = $1;
+WHERE username = $1;
 
 SELECT *
 FROM planning

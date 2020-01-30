@@ -1,3 +1,3 @@
 SELECT *
 FROM completed
-WHERE user_id = $1;
+WHERE username = $1;
