@@ -23,5 +23,7 @@ massive(CONNECTION_STRING).then(dbInstance => {
   app.set("db", dbInstance);
 });
 
+/*profile endpoints */
+
 let port = PORT || 5000;
 app.listen(port, () => console.log(`clear on ${port}`));
