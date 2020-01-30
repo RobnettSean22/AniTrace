@@ -64,9 +64,21 @@ INSERT INTO planning(planning_code, user_id)
 VALUE
 ()
 
+/////////////read
+
 SELECT * planning
 WHERE user_id = $1;
 
+////////////update
+
+UPDATE planning
+
+SET episode_watched = $2
+
+WHERE user_id = $1;
+
+SELECT * FROM planning
+ORDER BY planning_id
 ```
 
 ++++++++++watching+++++++
@@ -83,8 +95,21 @@ INSERT INTO watching(watching_code, user_id)
 VALUE
 ()
 
+/////////////read
+
 SELECT * watching
 WHERE user_id = $1;
+
+////////////update
+
+UPDATE watching
+
+SET episode_watched = $2
+
+WHERE user_id = $1;
+
+SELECT * FROM watching
+ORDER BY watching_id
 ```
 
 +++++++++completed++++++++
@@ -101,6 +126,19 @@ INSERT INTO watching(watching_code, user_id)
 VALUE
 ()
 
+/////////////read
+
 SELECT * completed
 WHERE user_id = $1;
+
+////////////update
+
+UPDATE completed
+
+SET episode_watched = $2
+
+WHERE user_id = $1;
+
+SELECT * FROM complete
+ORDER BY completed_id
 ```
