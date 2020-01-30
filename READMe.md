@@ -40,7 +40,7 @@ CREATE TABLE users(
     username TEXT NOT NULL,
     email TEXT NOT NULL,
     password TEXT NOT NULL
-)
+);
 INSERT INTO users(family_name, username, email, password)
 VALUES
 ('Robnett', 'universoul', 'robnettsean22@gmail.com', 'Blindreaper22');
@@ -108,8 +108,8 @@ CREATE TABLE watching(
     watching_id SERIAL PRIMARY KEY NOT NULL,
     watching_code INTEGER,
      episode_watched BOOLEAN NOT NULL DEFAULT FALSE,
-    user_id INTEGER REFERENCES user(user_id)
-)
+    user_id INTEGER REFERENCES users(user_id)
+);
 
 INSERT INTO watching(watching_code, user_id)
 VALUES
@@ -158,8 +158,8 @@ CREATE TABLE completed(
     completed_id SERIAL PRIMARY KEY NOT NULL,
     completed_code INTEGER,
      episode_watched BOOLEAN NOT NULL DEFAULT FALSE,
-    user_id INTEGER REFERENCES user(user_id)
-)
+    user_id INTEGER REFERENCES users(user_id)
+);
 
 INSERT INTO watching(watching_code, user_id)
 VALUES
