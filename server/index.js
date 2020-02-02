@@ -43,7 +43,24 @@ massive(CONNECTION_STRING).then(dbInstance => {
   app.set("db", dbInstance);
 });
 
-/*profile endpoints */
+/*user end points */
+
+/*anime end points  */
+app.get("/api/planning_view/:username", planningAniView);
+app.get("/api/watching_view/:username", watchingAniView);
+app.get("/api/completed_view/:username", completedAniView);
+
+app.post("/api/planning_create/:username/:planning_id", planningCreate);
+app.post("/api/wating_create/:username/:watching_id", watchingCreate);
+app.post("/api/completed_create/:username/:completed_id", completedCreate);
+
+app.put("/api/planning_update/:username/:episode_watched", planningUpdate);
+app.put("/api/watching_update/:username/:episode_watched", watchingUpdate);
+app.put("/api/completed_update/:username/:episode_watched", completedUpdate);
+
+app.delete("/api/planning_delete/:username/:planning_id", planningDelete);
+app.delete("/api/watching_delete/:username/:watching_id", watchingDelete);
+app.delete("/api/completed_delete/:username/:completed_id", completedDeleted);
 
 let port = PORT || 5000;
 app.listen(port, () => console.log(`clear on ${port}`));
