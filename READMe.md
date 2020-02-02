@@ -59,7 +59,7 @@ CREATE TABLE planning(
     username TEXT REFERENCES users(username)
 )
 
-INSERT INTO planning(planning_code, user_id)
+INSERT INTO planning(username, planning_code)
 VALUES
 ()
 

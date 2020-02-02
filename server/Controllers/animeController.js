@@ -33,9 +33,9 @@ module.exports = {
   planningCreate: (req, res, next) => {
     const db = rea.qpp.get("db");
     const { username } = req.params;
-    const { plannig_code } = req.body;
+    const { planning_code } = req.body;
 
-    db.planning_create([username, plannig_code])
+    db.planning_create([username, planning_code])
       .then(createPlanning => res.status(200).send(createPlanning))
       .catch(err => {
         res.status(400).send({ errorMessage: "can not creat planning" });

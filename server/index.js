@@ -15,7 +15,7 @@ const {
   completedUpdate,
   planningDelete,
   watchingDelete,
-  completedDeleted
+  completedDelete
 } = require("./Controllers/animeController");
 const {
   register,
@@ -44,6 +44,10 @@ massive(CONNECTION_STRING).then(dbInstance => {
 });
 
 /*user end points */
+app.post("/auth/register", register);
+app.post("/auth/login", login);
+app.get("/auth/user_session", userSession);
+app.delete("/auth/logout", logout);
 
 /*anime end points  */
 app.get("/api/planning_view/:username", planningAniView);
@@ -60,7 +64,7 @@ app.put("/api/completed_update/:username/:episode_watched", completedUpdate);
 
 app.delete("/api/planning_delete/:username/:planning_id", planningDelete);
 app.delete("/api/watching_delete/:username/:watching_id", watchingDelete);
-app.delete("/api/completed_delete/:username/:completed_id", completedDeleted);
+app.delete("/api/completed_delete/:username/:completed_id", completedDelete);
 
 let port = PORT || 5000;
 app.listen(port, () => console.log(`clear on ${port}`));
