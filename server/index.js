@@ -3,6 +3,26 @@ const express = require("express");
 const app = express();
 const massive = require("massive");
 const session = require("express-session");
+const {
+  planningAniView,
+  watchingAniView,
+  completedAniView,
+  planningCreate,
+  watchingCreate,
+  completedCreate,
+  planningUpdate,
+  watchingUpdate,
+  completedUpdate,
+  planningDelete,
+  watchingDelete,
+  completedDeleted
+} = require("./Controllers/animeController");
+const {
+  register,
+  login,
+  logout,
+  userSession
+} = require("./Controllers/profileController");
 
 const { SESSION_SECRET, PORT, CONNECTION_STRING } = process.env;
 app.use(express.json());
