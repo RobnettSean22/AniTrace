@@ -1,4 +1,7 @@
-INSERT INTO watching
-    (watching_code, username)
+INSERT INTO completed
+    (username, completed_code)
 VALUES
     ($1, $2);
+SELECT *
+FROM completed
+WHERE username = $1;

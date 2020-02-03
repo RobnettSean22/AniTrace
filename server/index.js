@@ -54,9 +54,9 @@ app.get("/api/planning_view/:username", planningAniView);
 app.get("/api/watching_view/:username", watchingAniView);
 app.get("/api/completed_view/:username", completedAniView);
 
-app.post("/api/planning_create/:username/:planning_id", planningCreate);
-app.post("/api/wating_create/:username/:watching_id", watchingCreate);
-app.post("/api/completed_create/:username/:completed_id", completedCreate);
+app.post("/api/planning_create/:username", planningCreate);
+app.post("/api/watching_create/:username", watchingCreate);
+app.post("/api/completed_create/:username", completedCreate);
 
 app.put("/api/planning_update/:username/:episode_watched", planningUpdate);
 app.put("/api/watching_update/:username/:episode_watched", watchingUpdate);

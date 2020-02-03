@@ -31,37 +31,37 @@ module.exports = {
       });
   },
   planningCreate: (req, res, next) => {
-    const db = rea.qpp.get("db");
+    const db = req.app.get("db");
     const { username } = req.params;
     const { planning_code } = req.body;
 
     db.planning_create([username, planning_code])
       .then(createPlanning => res.status(200).send(createPlanning))
       .catch(err => {
-        res.status(400).send({ errorMessage: "can not creat planning" });
+        res.status(400).send({ errorMessage: "can not create planning" });
       });
   },
 
   watchingCreate: (req, res, next) => {
-    const db = rea.qpp.get("db");
+    const db = req.app.get("db");
     const { username } = req.params;
     const { watching_code } = req.body;
 
-    db.planning_create([username, watching_code])
+    db.watching_create([username, watching_code])
       .then(createWatching => res.status(200).send(createWatching))
       .catch(err => {
-        res.status(400).send({ errorMessage: "can not creat planning" });
+        res.status(400).send({ errorMessage: "can not create watching" });
       });
   },
   completedCreate: (req, res, next) => {
-    const db = rea.qpp.get("db");
+    const db = req.app.get("db");
     const { username } = req.params;
     const { completed_code } = req.body;
 
     db.completed_create([username, completed_code])
       .then(createCompleted => res.status(200).send(createCompleted))
       .catch(err => {
-        res.status(400).send({ errorMessage: "can not create planning" });
+        res.status(400).send({ errorMessage: "can not create completed" });
       });
   },
   planningUpdate: (req, res, next) => {
