@@ -1,8 +1,8 @@
 UPDATE watching
 
-SET episode_watched = $2
+SET episode_watched = $3
 
-WHERE username = $1;
+WHERE username = $1 AND watching_id =$2;
 
 SELECT *
 FROM watching

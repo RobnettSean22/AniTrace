@@ -1,9 +1,9 @@
 UPDATE completed
 
-SET episode_watched = $2
+SET episode_watched = $3
 
-WHERE username = $1;
+WHERE username = $1 AND completed_id = $2;
 
 SELECT *
-FROM complete
-ORDER BY completed_id
+FROM completed
+ORDER BY completed_id;

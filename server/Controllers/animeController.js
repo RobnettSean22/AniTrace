@@ -66,9 +66,9 @@ module.exports = {
   },
   planningUpdate: (req, res, next) => {
     const db = req.app.get("db");
-    const { username } = req.params;
+    const { username, planning_id } = req.params;
     const { episode_watched } = req.body;
-    db.planing_update([username, episode_watched])
+    db.planning_update([username, planning_id, episode_watched])
       .then(planningUpdate => res.status(200).send(planningUpdate))
       .catch(err => {
         res.status(400).send({ errorMessage: "can not update planning" });
@@ -76,9 +76,9 @@ module.exports = {
   },
   watchingUpdate: (req, res, next) => {
     const db = req.app.get("db");
-    const { username } = req.params;
+    const { username, watching_id } = req.params;
     const { episode_watched } = req.body;
-    db.watching_update([username, episode_watched])
+    db.watching_update([username, watching_id, episode_watched])
       .then(watchingUpdate => res.status(200).send(watchingUpdate))
       .catch(err => {
         res.status(400).send({ errorMessage: "can not update planning" });
@@ -86,9 +86,9 @@ module.exports = {
   },
   completedUpdate: (req, res, next) => {
     const db = req.app.get("db");
-    const { username } = req.params;
+    const { username, completed_id } = req.params;
     const { episode_watched } = req.body;
-    db.planing_update([username, episode_watched])
+    db.completed_update([username, completed_id, episode_watched])
       .then(completedUpdate => res.status(200).send(completedUpdate))
       .catch(err => {
         res.status(400).send({ errorMessage: "can not update planning" });

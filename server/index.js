@@ -58,9 +58,9 @@ app.post("/api/planning_create/:username", planningCreate);
 app.post("/api/watching_create/:username", watchingCreate);
 app.post("/api/completed_create/:username", completedCreate);
 
-app.put("/api/planning_update/:username/:episode_watched", planningUpdate);
-app.put("/api/watching_update/:username/:episode_watched", watchingUpdate);
-app.put("/api/completed_update/:username/:episode_watched", completedUpdate);
+app.put("/api/planning_update/:username/:planning_id", planningUpdate);
+app.put("/api/watching_update/:username/:watching_id", watchingUpdate);
+app.put("/api/completed_update/:username/:completed_id", completedUpdate);
 
 app.delete("/api/planning_delete/:username/:planning_id", planningDelete);
 app.delete("/api/watching_delete/:username/:watching_id", watchingDelete);
